@@ -4,9 +4,9 @@ pizza = false
 console.log('var pizza = ' + pizza);
 
 // Khai báo biến dùng const không cho thay đổi giá trị
-const pizza = true
-pizza = false
-console.log('const pizza = ' + pizza);
+const apple = true
+apple = false
+console.log('const apple = ' + apple);
 
 // Khai báo biến dùng let để thay đổi giá trị trong nhóm ngoặc nhọn {}
 /*var topic = "ES6"
