@@ -26,5 +26,6 @@ for (var i=0; i<5; i++){
   div.onclick = function() {
     alert('This is box #' + i)
   }
-  container.appendChild(div)
+  container.appendChild(div)  
 }
+console.log('Created div')
