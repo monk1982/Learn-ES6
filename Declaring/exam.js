@@ -4,17 +4,17 @@ pizza = false
 console.log('var pizza = ' + pizza);
 
 // Khai báo biến dùng const không cho thay đổi giá trị
-const apple = true
+//const apple = true
 apple = false
 console.log('const apple = ' + apple);
 
 // Khai báo biến dùng let để thay đổi giá trị trong nhóm ngoặc nhọn {}
-/*var topic = "ES6"
+var topic = "ES6"
 if (topic) {
   let topic = "React"
   console.log('topic in curly brackets = ' + topic);
 }
-console.log('original topic = ' + topic);*/
+console.log('original topic = ' + topic);
 
 //Khi chạy trong vòng lặp tạo div sử dụng biến i đặt tên. Nếu không dùng let thì khi hiển thị luôn là số i cuối cùng.
 // Bên dưới là ví dụ:
