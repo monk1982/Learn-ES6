@@ -20,11 +20,11 @@ console.log('original topic = ' + topic);
 // Bên dưới là ví dụ:
 // Nhóm 5 ô đỏ sẽ không dùng let và cho thông báo thứ tự các div
 // Nhóm 5 ô xanh dương sẽ dùng let và cho thông báo thứ tự các div
-/*var div, container = document.getElementById('container')
+var div, container = document.getElementById('container')
 for (var i=0; i<5; i++){
   div= document.createElement('div')
   div.onclick = function() {
     alert('This is box #' + i)
   }
   container.appendChild(div)
-}*/
+}
