@@ -1,4 +1,5 @@
 // Set the configuration for your app  
+console.log('Run first');
   var config = {
     apiKey: "KvujMTzIGrZZvGe26wyNOlRcghZ5iysTdMcSiusr",
     authDomain: "intense-torch-7295.firebaseapp.com",
