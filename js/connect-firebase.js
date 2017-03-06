@@ -1,25 +1,11 @@
 // Set the configuration for your app  
+  // Initialize Firebase
   var config = {
-    databaseURL: "https://intense-torch-7295.firebaseio.com",    
+    apiKey: "AIzaSyB9AHi8kvOCwqdqOUGmAtmBeadiTil-6pc",
+    authDomain: "quiz-2bd44.firebaseapp.com",
+    databaseURL: "https://quiz-2bd44.firebaseio.com",
+    storageBucket: "quiz-2bd44.appspot.com",
+    messagingSenderId: "270972232114"
   };
   firebase.initializeApp(config);
-  var email = 'thuyto@tricao.com';
-  var password = '1234';
 
-// Signin with email and pass
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-      console.log ('In Err:'+errorMessage)    
-  });
-
-// Get a reference to the database service
-  var database = firebase.database();
-
-// Signout
-  firebase.auth().signOut().then(function() {
-    console.log('Sign out');
-  }, function(error) {
-    console.log ('Out Err:'+error.message)    
-  });
