@@ -1,7 +1,9 @@
-// Initializes FriendlyChat.
+// Initializes Quiz.
 function quiz() {
   this.checkSetup();  
   this.initFirebase();
+  this.signIn();
+  this.signOut();
 }
 
 // Sets up shortcuts to Firebase features and initiate firebase auth.
@@ -37,6 +39,7 @@ quiz.prototype.signIn = function() {
 quiz.prototype.signOut = function() {
   // Sign out of Firebase.
   this.auth.signOut();
+  console.log('Sign Out')
 };
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
