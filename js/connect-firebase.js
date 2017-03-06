@@ -4,7 +4,7 @@
   };
   firebase.initializeApp(config);
   var email = 'thuyto@tricao.com';
-  var password = '12';
+  var password = '1234';
 
 // Signin with email and pass
   firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
