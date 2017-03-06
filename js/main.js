@@ -40,6 +40,7 @@ quiz.prototype.onAuthStateChanged = function(user) {
     var profilePicUrl = user.photoURL; // Only change these two lines!
     var userName = user.displayName;   // Only change these two lines!
     console.log(user.displayName);
+  }
 };
   
 // Returns true if user is signed-in. Otherwise false and displays a message.
