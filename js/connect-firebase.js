@@ -1,12 +1,13 @@
 // Set the configuration for your app
-// TODO: Replace with your project's config object
   var config = {
-    apiKey: "apiKey",
-    authDomain: "projectId.firebaseapp.com",
-    databaseURL: "https://databaseName.firebaseio.com",
+    apiKey: "KvujMTzIGrZZvGe26wyNOlRcghZ5iysTdMcSiusr",
+    authDomain: "intense-torch-7295.firebaseapp.com",
+    databaseURL: "https://intense-torch-7295.firebaseio.com",
     storageBucket: "bucket.appspot.com"
   };
   firebase.initializeApp(config);
 
 // Get a reference to the database service
   var database = firebase.database();
+
+console.log('Run OK');
