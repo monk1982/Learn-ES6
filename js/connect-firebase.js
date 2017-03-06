@@ -1,4 +1,4 @@
-// Set the configuration for your app
+// Set the configuration for your app  
   var config = {
     apiKey: "KvujMTzIGrZZvGe26wyNOlRcghZ5iysTdMcSiusr",
     authDomain: "intense-torch-7295.firebaseapp.com",
