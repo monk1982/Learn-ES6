@@ -2,8 +2,9 @@
 function quiz() {
   this.checkSetup();  
   this.initFirebase();
+  this.signIn();
   this.loadquests();
-  //this.signIn();
+  
   //this.signOut();
 }
 
