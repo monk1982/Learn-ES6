@@ -1,9 +1,9 @@
 // Initializes Quiz.
 function quiz() {
   this.checkSetup();  
-  this.initFirebase();   
-  this.signIn();
+  this.initFirebase();    
   this.loadquests();
+  //this.signIn();
   //this.signOut();
 }
 
