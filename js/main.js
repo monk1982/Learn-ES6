@@ -23,7 +23,7 @@ quiz.prototype.loadquests = function() {
   this.questsRef = this.database.ref('quests');
   // Make sure we remove all previous listeners.
   this.questsRef.off();
-
+  console.log('Run');
   // Loads the last 12 quests and listen for new ones.
   var setQuests = function(data) {
     var val = data.val();
