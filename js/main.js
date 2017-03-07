@@ -28,10 +28,9 @@ quiz.prototype.loadquests = function() {
   this.questsRef.off();
   
   // Loads the last 12 quests and listen for new ones.
-  var setQuests = function(data) {
-    console.log('Run setQuests');
+  var setQuests = function(data) {    
     var val = data.val();    
-    console.log(val)
+    console.log(data.key+'='+val)
     //this.displayQuests(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
   }.bind(this);    
   
