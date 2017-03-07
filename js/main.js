@@ -1,10 +1,9 @@
 // Initializes Quiz.
 function quiz() {
   this.checkSetup();  
-  this.initFirebase();
-  this.signIn();
+  this.initFirebase(); 
   this.loadquests();
-  
+  //this.signIn();
   //this.signOut();
 }
 
@@ -22,14 +21,14 @@ quiz.prototype.initFirebase = function() {
 quiz.prototype.loadquests = function() {
   // Reference to the /quests/ database path.
   this.questsRef = this.database.ref('quests');
-  
+  console.log(this.questsRef);
   this.questsRef.on('value', function(dataSnapshot) {
     console.log('DataSnapshot');
     console.log(dataSnapshot)
   });
   
   // Make sure we remove all previous listeners.
-  this.questsRef.off();
+  /*this.questsRef.off();
   console.log('Run');
   // Loads the last 12 quests and listen for new ones.
   var setQuests = function(data) {
@@ -40,7 +39,7 @@ quiz.prototype.loadquests = function() {
   }.bind(this);    
   
   this.questsRef.limitToLast(12).on('child_added', setQuests);
-  this.questsRef.limitToLast(12).on('child_changed', setQuests);
+  this.questsRef.limitToLast(12).on('child_changed', setQuests);*/
 };
 
 // Signs-in Firebase.
