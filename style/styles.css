@@ -8,14 +8,14 @@
 .bg-project-name { 
     padding: 4rem 2rem;
     background-color: #000;
-    width: 25%;
+    width: 23%;
     border: 0px;
     opacity: 0.5;    
 }
 
 .div-project-name { 
     padding: 4rem 2rem;    
-    width: 25%;
+    width: 23%;
     border: 0px;    
     float:left;
 }
