@@ -2,7 +2,7 @@
 function quiz() {
   this.checkSetup();  
   this.initFirebase(); 
-  this.loadquests();
+  
   //this.signIn();
   //this.signOut();
 }
@@ -15,6 +15,7 @@ quiz.prototype.initFirebase = function() {
   this.storage = firebase.storage();
   // Initiates Firebase auth and listen to auth state changes.
   this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+  this.loadquests();
 };
 
 // Loads questions and listens for upcoming ones.
