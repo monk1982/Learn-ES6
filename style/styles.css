@@ -6,20 +6,13 @@
 }
 
 .bg-project-name { 
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     background-color: #000;
     width: 23%;
     border: 0px;
     background:rgba(0,0,0,0.3);     
 }
 
-.div-project-name { 
-    padding: 4rem 2rem;    
-    width: 23%;
-    border: 0px;    
-    float:left;
-    position: absolute;
-}
 .project-name {    
     font-size: 1.75rem;       
     color: #ffffff;    
