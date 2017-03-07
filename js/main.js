@@ -2,9 +2,7 @@
 function quiz() {
   this.checkSetup();  
   this.initFirebase();    
-  this.loadquests();
-  //this.signIn();
-  //this.signOut();
+  this.loadquests();  
 }
 
 // Sets up shortcuts to Firebase features and initiate firebase auth.
@@ -13,25 +11,22 @@ quiz.prototype.initFirebase = function() {
   this.auth = firebase.auth();
   this.database = firebase.database();
   this.storage = firebase.storage();
-  // Initiates Firebase auth and listen to auth state changes.
-  this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));  
 };
 
 // Loads questions and listens for upcoming ones.
 quiz.prototype.loadquests = function() {
   // Reference to the /quests/ database path.
   this.questsRef = this.database.ref('quests');
-  
+  /*
   this.questsRef.on('value', function(dataSnapshot) {
-    console.log('DataSnapshot');
     console.log(dataSnapshot)
   }, function (error) {
    console.log("Error: " + error.code);
-  });
+  });*/
   
   // Make sure we remove all previous listeners.
-  /*this.questsRef.off();
-  console.log('Run');
+  this.questsRef.off();
+  
   // Loads the last 12 quests and listen for new ones.
   var setQuests = function(data) {
     console.log('Run setQuests');
@@ -75,8 +70,7 @@ quiz.prototype.onAuthStateChanged = function(user) {
   if (user) { // User is signed in!
     // Get profile pic and user's name from the Firebase user object.
     var profilePicUrl = user.photoURL; // Only change these two lines!
-    var userName = user.displayName;   // Only change these two lines!
-    console.log(user.displayName);
+    var userName = user.displayName;   // Only change these two lines!    
   }
 };
   
