@@ -21,6 +21,12 @@ quiz.prototype.initFirebase = function() {
 quiz.prototype.loadquests = function() {
   // Reference to the /quests/ database path.
   this.questsRef = this.database.ref('quests');
+  
+  this.questsRef.on('value', function(dataSnapshot) {
+    console.log('DataSnapshot');
+    console.log(dataSnapshot)
+  });
+  
   // Make sure we remove all previous listeners.
   this.questsRef.off();
   console.log('Run');
@@ -30,12 +36,7 @@ quiz.prototype.loadquests = function() {
     var val = data.val();    
     console.log(val)
     //this.displayQuests(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
-  }.bind(this);
-  
-  this.questsRef.on('value', function(dataSnapshot) {
-    console.log('DataSnapshot');
-    console.log(dataSnapshot)
-  });
+  }.bind(this);    
   
   this.questsRef.limitToLast(12).on('child_added', setQuests);
   this.questsRef.limitToLast(12).on('child_changed', setQuests);
