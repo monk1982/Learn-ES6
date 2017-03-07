@@ -2,8 +2,9 @@
 function quiz() {
   this.checkSetup();  
   this.initFirebase();
-  this.signIn();
-  this.signOut();
+  this.loadquests();
+  //this.signIn();
+  //this.signOut();
 }
 
 // Sets up shortcuts to Firebase features and initiate firebase auth.
@@ -14,6 +15,24 @@ quiz.prototype.initFirebase = function() {
   this.storage = firebase.storage();
   // Initiates Firebase auth and listen to auth state changes.
   this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+};
+
+// Loads questions and listens for upcoming ones.
+quiz.prototype.loadquests = function() {
+  // Reference to the /quests/ database path.
+  this.questsRef = this.database.ref('quests');
+  // Make sure we remove all previous listeners.
+  this.questsRef.off();
+
+  // Loads the last 12 quests and listen for new ones.
+  var setQuests = function(data) {
+    var val = data.val();
+    console.log(val)
+    //this.displayQuests(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
+  }.bind(this);
+  
+  //this.messagesRef.limitToLast(12).on('child_added', setMessage);
+  //this.messagesRef.limitToLast(12).on('child_changed', setMessage);
 };
 
 // Signs-in Firebase.
