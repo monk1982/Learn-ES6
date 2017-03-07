@@ -36,7 +36,7 @@ quiz.prototype.loadquests = function() {
   }.bind(this);    
   
   this.questsRef.limitToLast(12).on('child_added', setQuests);
-  this.questsRef.limitToLast(12).on('child_changed', setQuests);*/
+  this.questsRef.limitToLast(12).on('child_changed', setQuests);
 };
 
 // Signs-in Firebase.
