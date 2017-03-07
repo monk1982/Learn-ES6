@@ -1,9 +1,9 @@
 // Initializes Quiz.
 function quiz() {
   this.checkSetup();  
-  this.initFirebase(); 
+  this.initFirebase();   
+  this.signIn();
   this.loadquests();
-  //this.signIn();
   //this.signOut();
 }
 
@@ -21,7 +21,7 @@ quiz.prototype.initFirebase = function() {
 quiz.prototype.loadquests = function() {
   // Reference to the /quests/ database path.
   this.questsRef = this.database.ref('quests');
-  console.log(this.questsRef);
+  
   this.questsRef.on('value', function(dataSnapshot) {
     console.log('DataSnapshot');
     console.log(dataSnapshot)
