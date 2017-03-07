@@ -32,6 +32,11 @@ quiz.prototype.loadquests = function() {
     //this.displayQuests(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
   }.bind(this);
   
+  this.questsRef.on('value', function(dataSnapshot) {
+    console.log('DataSnapshot');
+    console.log(dataSnapshot)
+  });
+  
   this.questsRef.limitToLast(12).on('child_added', setQuests);
   this.questsRef.limitToLast(12).on('child_changed', setQuests);
 };
