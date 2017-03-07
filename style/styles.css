@@ -5,7 +5,7 @@
     background-size:100%;
 }
 
-.div-project-name { 
+.bg-project-name { 
     padding: 4rem 2rem;
     background-color: #000;
     width: 25%;
@@ -13,6 +13,12 @@
     opacity: 0.5;    
 }
 
+.div-project-name { 
+    padding: 4rem 2rem;    
+    width: 25%;
+    border: 0px;    
+    float:left;
+}
 .project-name {    
     font-size: 1.75rem;       
     color: #ffffff;    
