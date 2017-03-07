@@ -18,6 +18,7 @@
     width: 23%;
     border: 0px;    
     float:left;
+    position: absolute;
 }
 .project-name {    
     font-size: 1.75rem;       
