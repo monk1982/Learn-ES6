@@ -20,7 +20,8 @@
 }
 
 .my-slogan {
-    font-size: .7rem;    
-    color: #ffffff;      
+    font-size: 1rem;    
+    color: #ffffff; 
+    opacity: 0.7;  
 }
 
