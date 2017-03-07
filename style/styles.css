@@ -1,12 +1,16 @@
-.page-header {
-    padding: 4rem 2rem;
-    text-align: left;
+.page-header {       
     background-image: url('../img/china-1270219_1280.jpg');
     background-repeat: no-repeat;
     background-position: 25% 45%;    
     background-size:100%;
 }
 
+.div-project-name {
+    text-align: left;
+    padding: 4rem 2rem;
+    border: 1px solid #000;
+    color: #000;
+}
 
 .project-name {
     font-size: 1.75rem;
