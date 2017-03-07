@@ -2,7 +2,7 @@
 function quiz() {
   this.checkSetup();  
   this.initFirebase(); 
-  
+  this.loadquests();
   //this.signIn();
   //this.signOut();
 }
@@ -14,8 +14,7 @@ quiz.prototype.initFirebase = function() {
   this.database = firebase.database();
   this.storage = firebase.storage();
   // Initiates Firebase auth and listen to auth state changes.
-  this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
-  this.loadquests();
+  this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));  
 };
 
 // Loads questions and listens for upcoming ones.
@@ -26,6 +25,8 @@ quiz.prototype.loadquests = function() {
   this.questsRef.on('value', function(dataSnapshot) {
     console.log('DataSnapshot');
     console.log(dataSnapshot)
+  }, function (error) {
+   console.log("Error: " + error.code);
   });
   
   // Make sure we remove all previous listeners.
