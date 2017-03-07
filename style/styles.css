@@ -9,8 +9,7 @@
     background-color: #000;
     width: 25%;
     border: 0px;
-    opacity: 0.5;
-    z-index: -1;
+    opacity: 0.5;    
 }
 
 .project-name {
@@ -18,6 +17,7 @@
     font-size: 1.75rem;    
     float: left;
     color: #ffffff;
+    z-index: 100;
 }
 
 .project-tagline {
