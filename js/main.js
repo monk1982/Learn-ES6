@@ -2,7 +2,7 @@
 function quiz() {
   this.checkSetup();  
   this.initFirebase();   
-  //this.signIn();
+  this.signIn();
   this.loadquests();
   //this.signOut();
 }
@@ -48,7 +48,7 @@ quiz.prototype.loadquests = function() {
 quiz.prototype.signIn = function() {
   // Sign in Firebase using popup auth and Google as the identity provider.
   var provider = new firebase.auth.GithubAuthProvider();
-  this.auth.signInWithPopup(provider).then(function(result) {
+  this.auth.signInWithRedirect(provider).then(function(result) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
     var token = result.credential.accessToken;    
     var user = result.user;
