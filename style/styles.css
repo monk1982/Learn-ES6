@@ -10,7 +10,7 @@
     width: 25%;
     border: 0px;
     opacity: 0.5;
-    z-index: -100;
+    z-index: -1;
 }
 
 .project-name {
