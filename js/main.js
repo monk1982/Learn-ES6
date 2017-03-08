@@ -32,7 +32,7 @@ quiz.prototype.loadquests = function() {
   // Loads the last 12 quests and listen for new ones.
   var setQuests = function(data) {    
     var val = data.val()+'<br>';        
-    this.contents.textContent += val;
+    this.contents.innerHTML += val;
     //this.displayQuests(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
   }.bind(this);    
   
