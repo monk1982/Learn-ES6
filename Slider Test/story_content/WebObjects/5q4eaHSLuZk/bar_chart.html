@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Bar Chart</title>
+		<script src="../Chart.js"></script>
+	</head>
+	<body>
+	<script type="text/javascript">
+		var chartp = {};
+		chartp.x1=0;
+        var player = window.parent.GetPlayer();
+		chartp.x1 = Number(player.GetVar("Slider1"));
+		chartp.x2 = Number(player.GetVar("Slider2"));
+		chartp.x3 = Number(player.GetVar("Slider3"));
+		//window.alert(chartp.x1);
+		
+		
+		var annual_payment = chartp.x1*chartp.x2*30*12;
+		var interest_rate = chartp.x3/100;
+		alert(interest_rate);
+		var investment_term_10 = 10;
+		var investment_value_10 = future_value(annual_payment, interest_rate, investment_term_10);
+		var investment_term_20 = 20;
+		var investment_value_20 = future_value(annual_payment, interest_rate, investment_term_20);
+		var investment_term_30 = 30;
+		var investment_value_30 = future_value(annual_payment, interest_rate, investment_term_30);
+		
+		var randomScalingFactor = function(){ return Math.round(Math.random()*100000000)};
+		var cignum=0;
+		var interest=0;
+		var cost=0;
+		var barChartData = {
+		labels : ["10 Years","20 Years","30 Years"],
+				datasets : [
+					{
+						fillColor : "rgba(192,80,77,0.7)",
+						strokeColor : "rgba(192,80,77,0.9)",
+						highlightFill: "rgba(198,220,241,0.9)",
+						highlightStroke: "rgba(220,220,220,1)",
+						data : [investment_value_10, investment_value_20, investment_value_30]
+					},
+			
+			
+						]
+
+						}
+		window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myBar = new Chart(ctx).Bar(barChartData, {	responsive : true,	animation : true,	barValueSpacing : 5 });
+									}
+	
+	
+	function myfunction() {
+	chartp.x1 = Number(player.GetVar("Slider1"));
+	chartp.x2 = Number(player.GetVar("Slider2"));
+	chartp.x3 = Number(player.GetVar("Slider3"));
+	
+	
+	annual_payment = chartp.x1*chartp.x2*30*12;
+	interest_rate = chartp.x3/100;
+	investment_term_10 = 10;
+	investment_value_10 = future_value(annual_payment, interest_rate, investment_term_10);
+	//window.alert("test" + "\n" + investment_value_10);
+	investment_term_20 = 20;
+	investment_value_20 = future_value(annual_payment, interest_rate, investment_term_20);
+	//window.alert("test" + "\n" + investment_value_20);
+	investment_term_30 = 30;
+	investment_value_30 = future_value(annual_payment, interest_rate, investment_term_30);
+	//window.alert("test" + "\n" + investment_value_30);
+	
+	
+	
+	<!-- cignum = player.GetVar(“Slider1”); -->
+	<!-- alert(cignum); --> 
+	//10 Years
+	myBar.datasets[0].bars[0].value = investment_value_10;
+	//20 Years
+	myBar.datasets[0].bars[1].value = investment_value_20;
+	//20 Years
+	myBar.datasets[0].bars[2].value = investment_value_30;
+	//window.alert(chartp.x1);
+	//window.alert(chartp.x2);
+	//window.alert(chartp.x3);
+	
+	myBar.update();
+	
+	}
+	
+
+	
+	
+	
+	
+	
+	//FV Calculation
+	
+	function future_value(PMT, IR, NP) {
+				NP=NP*12;
+				IR=IR/12;
+				var FV = PMT * (Math.pow(1 + IR, NP) - 1) / IR;
+				return round_decimals(FV, 0)
+										}
+
+	function round_decimals(original_number, decimals) {
+				var result1 = original_number * Math.pow(10, decimals);
+				var result2 = Math.round(result1);
+				var result3 = result2 / Math.pow(10, decimals);
+				return (result3)
+														}
+
+	
+
+			<!-- window.alert(
+			//"Annual payment:\t$" + annual_payment + "\n" +   "Annual interest rate:\t" + interest_rate * 100 + "%\n" +   "Investment term:\t" + investment_term + " years\n\n" +   "Future value:\t$" + investment_value_10 + "\n" + investment_value_10); -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+	
+	<div style="width: 51%">
+			<canvas id="canvas" height="237" width="237" ></canvas>
+	</div>
+	<br>
+	<br>
+	<br>
+	
+	
+	<button type="button" onclick= "myfunction()" >Update Data</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	</body>
+</html>

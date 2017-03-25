@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Bar Chart</title>
+		<script src="../Chart.js"></script>
+	</head>
+	<body>
+		<div style="width: 100%">
+			<canvas id="canvas" height="976" width="732"></canvas>
+		</div>
+
+
+	<script>
+	var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+	var cignum=0;
+	var interest=0;
+	var cost=0;
+	var barChartData = {
+		labels : ["10 Years","20 Years","30 Years"],
+		datasets : [
+			{
+				fillColor : "rgba(192,80,77,0.9)",
+				strokeColor : "rgba(220,220,220,0.9)",
+				highlightFill: "rgba(198,220,241,0.9)",
+				highlightStroke: "rgba(220,220,220,1)",
+				data : [randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			},
+			
+			
+		]
+
+	}
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myBar = new Chart(ctx).Bar(barChartData, {
+			responsive : true,
+			animation : true,
+			barValueSpacing : 5
+		});
+	}
+	
+	function myfunction() {
+	<!-- alert("done"); -->
+	//10 Years
+	myBar.datasets[0].bars[0].value = randomScalingFactor();
+	//20 Years
+	myBar.datasets[0].bars[1].value = randomScalingFactor();
+	//20 Years
+	myBar.datasets[0].bars[2].value = randomScalingFactor();
+	
+	
+	myBar.update();
+	
+	}
+	</script>
+	
+	<button type="button" onclick= "myfunction()" >Click Me!</button>
+	
+	</body>
+</html>

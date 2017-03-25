@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Bar Chart</title>
+		<script src="../Chart.js"></script>
+	</head>
+	<body>
+	<script type="text/javascript">
+		var chartp = {};
+		chartp.x1=0;
+        var player = window.parent.GetPlayer();
+		chartp.x1 = Number(player.GetVar("Slider1"));
+		chartp.x2 = Number(player.GetVar("Slider2"));
+		chartp.x3 = Number(player.GetVar("Slider3"));
+		//window.alert(chartp.x1);
+		
+		var randomScalingFactor = function(){ return Math.round(Math.random()*100000000)};
+		var cignum=0;
+		var interest=0;
+		var cost=0;
+		var barChartData = {
+		labels : ["10 Years","20 Years","30 Years"],
+				datasets : [
+					{
+						fillColor : "rgba(192,80,77,0.7)",
+						strokeColor : "rgba(192,80,77,0.9)",
+						highlightFill: "rgba(198,220,241,0.9)",
+						highlightStroke: "rgba(220,220,220,1)",
+						data : [chartp.x1, chartp.x2, chartp.x3]
+					},
+			
+			
+						]
+
+						}
+		window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myBar = new Chart(ctx).Bar(barChartData, {	responsive : true,	animation : true,	barValueSpacing : 5 });
+									}
+	
+	
+	function myfunction() {
+	chartp.x1 = Number(player.GetVar("Slider1"));
+	chartp.x2 = Number(player.GetVar("Slider2"));
+	chartp.x3 = Number(player.GetVar("Slider3"));
+	<!-- cignum = player.GetVar(“Slider1”); -->
+	<!-- alert(cignum); --> 
+	//10 Years
+	myBar.datasets[0].bars[0].value = chartp.x1;
+	//20 Years
+	myBar.datasets[0].bars[1].value = chartp.x2;
+	//20 Years
+	myBar.datasets[0].bars[2].value = chartp.x3;
+	//window.alert(chartp.x1);
+	//window.alert(chartp.x2);
+	//window.alert(chartp.x3);
+	
+	myBar.update();
+	
+	}
+	
+
+	</script>
+	
+	<div style="width: 51%">
+			<canvas id="canvas" height="237" width="237" ></canvas>
+	</div>
+	<br>
+	<br>
+	<br>
+	
+	
+	<button type="button" onclick= "myfunction()" >Update Data</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	</body>
+</html>
